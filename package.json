@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "rimraf files/moved && node index"
   },
   "author": "Sam Lau",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "rimraf": "^2.6.1"
+  }
 }

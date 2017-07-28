@@ -1,0 +1,5 @@
+just some silly text
+random-text-file
+/Users/samlau/Desktop/full stack - file ops/files/original/random-text-file.txt
+random-text-file_edited_2017_07_27_22_12
+/Users/samlau/Desktop/full stack - file ops/files/moved/random-text-file_edited_2017_07_27_22_12.txt

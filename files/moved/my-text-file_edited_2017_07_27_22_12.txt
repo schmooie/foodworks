@@ -1,0 +1,7 @@
+this is another random text file
+what's in here is not important
+don't you love node?
+my-text-file
+/Users/samlau/Desktop/full stack - file ops/files/original/my-text-file.txt
+my-text-file_edited_2017_07_27_22_12
+/Users/samlau/Desktop/full stack - file ops/files/moved/my-text-file_edited_2017_07_27_22_12.txt

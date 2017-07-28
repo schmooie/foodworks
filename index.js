@@ -7,11 +7,13 @@ const append = require('./lib/append');
 const ORIGIN_FOLDER = path.resolve(__dirname, 'files/original');
 const DESTINATION_FOLDER = path.resolve(__dirname, 'files/moved');
 
+if (!fs.existsSync(DESTINATION_FOLDER)){
+  fs.mkdirSync(DESTINATION_FOLDER);
+}
+
 getFileNamesFromDir(ORIGIN_FOLDER)
-// .then(fileName => console.log(fileName))
-.then((fileNames) => {
-  fileNames.forEach(fileName => console.log(getMetaData(fileName)));
-});
+.then(fileNames => fileNames.map(getMetaData))
+.then(metaData => metaData.map(append));
 
 function appendZero(int) {
   return ('0' + int).slice(-2);

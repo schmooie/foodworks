@@ -1,0 +1,7 @@
+this is silly
+just some text in a file
+hrmmm doesnt this look like fun
+anothertext-file
+/Users/samlau/Desktop/full stack - file ops/files/original/anothertext-file.txt
+anothertext-file_edited_2017_07_27_22_12
+/Users/samlau/Desktop/full stack - file ops/files/moved/anothertext-file_edited_2017_07_27_22_12.txt
