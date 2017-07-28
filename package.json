@@ -1,0 +1,11 @@
+{
+  "name": "foodworks",
+  "version": "1.0.0",
+  "description": "Foodworks code challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sam Lau",
+  "license": "MIT"
+}
