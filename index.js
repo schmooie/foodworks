@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const rename = require('./lib/rename');
-const append = require('./lib/append');
+const appendAndRename = require('./lib/rename');
 
 const ORIGIN_FOLDER = path.resolve(__dirname, 'files/original');
 const DESTINATION_FOLDER = path.resolve(__dirname, 'files/moved');
@@ -13,7 +12,25 @@ if (!fs.existsSync(DESTINATION_FOLDER)){
 
 getFileNamesFromDir(ORIGIN_FOLDER)
 .then(fileNames => fileNames.map(getMetaData))
-.then(metaData => metaData.map(append));
+.then((arrOfMetaData) => {
+  const promises = arrOfMetaData.map(metaData => reflect(appendAndRename(metaData)));
+  return Promise.all(promises);
+})
+.then((metaData) => {
+  const errorFiles = metaData
+  .filter(({ status }) => status === 'rejected')
+  .map(({ error }) => error.originalName);
+  const renamed = metaData.filter(({ status }) => status === 'resolved');
+
+  console.log(`renamed ${renamed.length} files, with ${errorFiles.length} errors ${errorFiles.length ? '(' + errorFiles.join(', ') + ')' : ''}`);
+});
+
+// force resolve everything
+function reflect(promise) {
+  return promise.then(
+    (data) => ({ data, status: 'resolved' }),
+    (error) => ({ error, status: 'rejected' }));
+}
 
 function appendZero(int) {
   return ('0' + int).slice(-2);
