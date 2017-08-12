@@ -38,7 +38,7 @@ Feel free to use any existing open source javascript libraries.
 3. extra brownie points for writing another module to append the file information
 4. add tests to your project to ensure it would work well with other files besides the ones provided
 
-##Tips
+## Tips
 
 * Document your assumptions.
 * You'll be reviewed on your code quality, completeness, efficiency, and documentation.
